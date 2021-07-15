@@ -1,0 +1,15 @@
+.form {
+    box-shadow: 0 0 4pt 0.5pt #00000034;
+    height: 50rem;
+    text-align: center;
+    width: 40rem;
+    padding-top: 2rem;
+    transition: 200ms ease all;
+}
+.form:hover {
+    box-shadow: 0 0 4pt 0.5pt rgba(0, 0, 0, 0.26);
+}
+
+.container{
+    margin-top: 4rem;
+}
