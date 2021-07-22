@@ -1,0 +1,23 @@
+.textColor{
+    color:#08C177!important;
+}
+
+#greenButton{
+    background-color: #08C177!important;
+}
+
+#greenButton:hover{
+    background-color: #189966!important;
+    box-shadow: none!important;
+}
+.linkHover:hover{
+    color: #189966!important;
+}
+
+.container{
+    text-align: center;
+}
+
+.checkbox{
+    color:#08C177!important
+}

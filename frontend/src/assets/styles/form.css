@@ -1,15 +1,22 @@
 .form {
     box-shadow: 0 0 4pt 0.5pt #00000034;
-    height: 50rem;
+    min-height: 52rem;
     text-align: center;
     width: 40rem;
     padding-top: 2rem;
     transition: 200ms ease all;
+    height: auto;
+    padding-bottom: 2rem;
 }
 .form:hover {
     box-shadow: 0 0 4pt 0.5pt rgba(0, 0, 0, 0.26);
 }
 
-.container{
-    margin-top: 4rem;
+.form{
+    margin-top: 1rem!important;
 }
+.lendingTreeLogo{
+    height: 9rem;
+    width: 27rem!important;
+}
+

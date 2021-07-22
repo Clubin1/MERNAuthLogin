@@ -15,6 +15,21 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    studentAcc: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    personalAcc: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    homeAcc: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
     date: {
         type: Date,
         default: Date.now

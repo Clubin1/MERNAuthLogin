@@ -8,6 +8,7 @@ import {loginUser} from "../../actions/authActions";
 import classnames from "classnames";
 
 import '../../assets/styles/form.css'
+import '../../assets/styles/styles.css'
 
 class Login extends Component {
     constructor() {
@@ -46,13 +47,14 @@ class Login extends Component {
     render() {
         const {errors} = this.state;
         return (<div className="container">
+                                      <img className='lendingTreeLogo' src='https://upload.wikimedia.org/wikipedia/en/f/f0/LT_Logo_-_Gradient.png' alt='lending tree'></img>
             <div style={
                     {marginTop: "4rem"}
                 }
                 className="row form">
                 <div className="col s8 offset-s2">
                     <Link to="/" className="btn-flat waves-effect">
-                        <i className="material-icons left">keyboard_backspace</i>
+                        <i className="linkHover material-icons left">keyboard_backspace</i>
                         Back to
                                       home
                     </Link>
@@ -65,7 +67,7 @@ class Login extends Component {
                         </h4>
                         <p className="grey-text text-darken-1">
                             Don't have an account?
-                            <Link to="/register"> Register</Link>
+                            <Link className='textColor' to="/register"> Register</Link>
                         </p>
                     </div>
                     <form noValidate
@@ -128,13 +130,14 @@ class Login extends Component {
                         }>
                             <button style={
                                     {
-                                        width: "150px",
+                                        width: "100%",
                                         borderRadius: "3px",
                                         letterSpacing: "1.5px",
-                                        marginTop: "1rem"
+                                        marginTop: "1rem",
                                     }
                                 }
                                 type="submit"
+                                id="greenButton"
                                 className="btn btn-large waves-effect waves-light hoverable blue accent-3">
                                 Login
                             </button>
