@@ -225,3 +225,9 @@ body{
   .textColor{
       color: #0f62d1;
   }
+
+@media (max-width:768px){
+  .thingy{
+    padding-left: 2rem;
+  }
+}

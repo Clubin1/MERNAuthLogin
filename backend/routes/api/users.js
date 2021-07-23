@@ -27,7 +27,7 @@ router.post('/register', (req, res) => { // Form validation
         if (user) {
             return res.status(400).json({email: 'Email already exists'})
         } else {
-            const newUser = new User({name: req.body.name, email: req.body.email, password: req.body.password, studentAcc: req.body.studentAcc, homeAcc: req.body.homeAcc, personalAcc: req.body.personalAcc})
+            const newUser = new User({name: req.body.name, email: req.body.email, password: req.body.password, studentAcc: req.body.studentAcc, homeAcc: req.body.homeAcc, personalAcc: req.body.personalAcc, creditScore: req.body.creditScore})
 
             // Hash password before saving in db
             bcrypt.genSalt(10, (err, salt) => {
@@ -68,10 +68,17 @@ router.post("/login", (req, res) => { // Form validation
 
         // Check password
         bcrypt.compare(password, user.password).then(isMatch => {
-            if (isMatch) { // User matched, create JWT payload
+            if (isMatch) { 
+                // User matched, create JWT payload
                 const payload = {
                     id: user.id,
-                    name: user.name
+                    name: user.name,
+                    creditScore: user.creditScore,
+                    studentAcc: user.studentAcc,
+                    personalAcc: user.personalAcc,
+                    homeAcc: user.homeAcc,
+                    bankAccount: user.bankAccount,
+
                 }
                 // Sign token
                 jwt.sign(payload, keys.secretOrKey, {

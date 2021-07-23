@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
 import '../../assets/styles/form.css'
+import '../../assets/styles/dashboard.css'
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -14,13 +15,14 @@ render() {
     const { user } = this.props.auth;
     console.log(user)
 return (
-      <div style={{ height: "100vh" }} className="container valign-wrapper">
-        <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                Welcome to your personal dashboard
+      <div className="dashboardWrapper">
+        <div className="welcomeSection">
+        <h4>
+              <p className="flow-text dashboardText"> Your Bank: {user.bankAccount}</p>
+              <p className="flow-text dashboardText grey-text text-darken-1">
+                Welcome to your personal dashboard, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}
+                <br></br>
+                View your financial status
               </p>
               
             </h4>
@@ -37,7 +39,6 @@ return (
             >
               Logout
             </button>
-          </div>
         </div>
       </div>
     );

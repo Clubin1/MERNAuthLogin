@@ -43,11 +43,11 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Footer/>
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
+            <Footer/>
           </div>
         </Router>
       </Provider>

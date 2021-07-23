@@ -1,6 +1,19 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+// Credit Calc
+function creditScoreCalc(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function getBank(){
+    var myArray = ['Wells Fargo', 'Citigroup', 'Bank of America']; 
+    var rand = myArray[(Math.random() * myArray.length) | 0]
+    return rand
+}
+
 // Create Schema
 const UserSchema = new Schema({
     name: {
@@ -33,6 +46,14 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    creditScore: {
+        type: Number,
+        default: creditScoreCalc(300, 800)
+    },
+    bankAccount: {
+        type: String,
+        default: getBank()
     }
 })
 

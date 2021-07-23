@@ -1,18 +1,31 @@
 
 nav{
-    height: 5rem;
     position: fixed!important;
     z-index: 10;
     box-shadow: none;
+    height: auto;
 }
 
 .navbar{
     background-color: #263343f3!important;
+    top: 0;
 }
 .lendingTree{
     height: 4rem;
 }
 
+.dropdown-menu{
+    background-color: #263343f3!important;
+    margin-top: .4rem;
+}
+
+.dropdown-item{
+    color: white;
+}
+
+.dropdown-item:hover{
+    background-color: #364b64f3;
+}
 .navClear{
     background: transparent!important;
     border: none!important;
@@ -53,5 +66,25 @@ nav{
 
 .navbar-brand:hover{
     color: #1f6646!important;
+}
+
+
+@media(max-width:1150px){
+    .navWidth{
+        width: 10rem;
+    }
+}
+
+@media(max-width:1150px){
+    .navWidth{
+        width: 5rem;
+    }
+}
+
+@media(max-width:768px){
+}
+
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+    background-color: rgb(255, 255, 255) !important;
 }
 

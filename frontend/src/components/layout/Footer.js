@@ -13,8 +13,7 @@ class Footer extends Component {
                         <div class="footer-widget">
                             <img height="66rem" src="https://www.adweek.com/wp-content/uploads/2018/07/lendingtree-white-890-2081.png"></img>
                             <div class="footer-text">
-                                <p>Our team has more then 5 years of experience coding! Our team is dedicated to bringing clients the most up to date, innovative, efficient and effective graphic designing techniques for their websites and the marketing industry. Choose us today to grow your business!
-
+                                <p>LendingTree, LLC is a Marketing Lead Generator and is a Duly Licensed Mortgage Broker, as required by law, with its main office located at 1415 Vantage Park Drive, Suite 700, Charlotte, NC 28203, Telephone Number 866-501-2397 (TDD/TTY). NMLS Unique Identifier #1136. LendingTree, LLC is known as LT Technologies in lieu of true name LendingTree, LLC in NY. LendingTree technology and processes are patented under U.S. Patent Nos. 6,385,594 and 6,611,816 and licensed under U.S. Patent Nos. 5,995,947 and 5,758,328. © 2016 LendingTree, LLC. All Rights Reserved. This site is directed at, and made available to, persons in the continental U.S., Alaska and Hawaii only.
                                 </p>
                             </div>
                             
@@ -71,7 +70,7 @@ class Footer extends Component {
                                 </a>
                                 <div class="copyright-text">
                                     <p>Copyright &copy; 2021 All Rights Reserved by
-                                        <a href="/"> NeroDev.</a>
+                                        <a href="/"> LendingTree.</a>
                                     </p>
                                 </div>
                             </div>
