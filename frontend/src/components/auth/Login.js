@@ -46,13 +46,14 @@ class Login extends Component {
     };
     render() {
         const {errors} = this.state;
-        return (<div className="container">
-                                      <img className='lendingTreeLogo' src='https://upload.wikimedia.org/wikipedia/en/f/f0/LT_Logo_-_Gradient.png' alt='lending tree'></img>
+        return (<div className='center'>
+            <div className="formContainer">
             <div style={
-                    {marginTop: "4rem"}
+                    {marginTop: "3rem",
+                height:'47rem'}
                 }
                 className="row form">
-                <div className="col s8 offset-s2">
+                <div className="">
                     <Link to="/" className="btn-flat waves-effect">
                         <i className="linkHover material-icons left">keyboard_backspace</i>
                         Back to
@@ -67,7 +68,7 @@ class Login extends Component {
                         </h4>
                         <p className="grey-text text-darken-1">
                             Don't have an account?
-                            <Link className='textColor' to="/register"> Register</Link>
+                            <Link className='textColor' to="/register"> Sign up</Link>
                         </p>
                     </div>
                     <form noValidate
@@ -143,10 +144,19 @@ class Login extends Component {
                             </button>
                             
                         </div>
-                        
+                        <div className="col s12"
+                            style={
+                                {marginTop: "2rem"}
+                        }>
+                        <p className="grey-text text-darken-1">
+                            
+                            <Link className='textColor' to="/register"> Log in with a free lending tree account here</Link>
+                        </p>
+                        </div>
                     </form>
                 </div>
             </div>
+        </div>
         </div>);
     }
 } Login.propTypes = {

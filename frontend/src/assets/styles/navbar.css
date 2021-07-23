@@ -1,0 +1,57 @@
+
+nav{
+    height: 5rem;
+    position: fixed!important;
+    z-index: 10;
+    box-shadow: none;
+}
+
+.navbar{
+    background-color: #263343f3!important;
+}
+.lendingTree{
+    height: 4rem;
+}
+
+.navClear{
+    background: transparent!important;
+    border: none!important;
+}
+.navBtn{
+    border-radius: 50rem;
+    padding-left: 2.3rem!important;
+    padding-right: 2.3rem!important;
+    margin-left: 1rem;
+}
+
+.navWidth{
+    width: 20rem;
+}
+
+.nav-link:hover{
+    color:#4193ff!important
+}
+.nav-link{
+    transition: 200ms ease all;
+    color:white!important;
+}
+
+
+
+.dropdown-item:hover{
+    color:#4193ff!important
+}
+
+.dropdown-item{
+    transition: 200ms ease all;
+}
+
+.navbar-brand{
+    color: #29bd78!important;
+    transition: 200ms ease all;
+}
+
+.navbar-brand:hover{
+    color: #1f6646!important;
+}
+

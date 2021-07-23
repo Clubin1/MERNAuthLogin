@@ -1,13 +1,13 @@
 .textColor{
-    color:#08C177!important;
+    color:#4193ff!important;
 }
 
 #greenButton{
-    background-color: #08C177!important;
+    background-color: #4193ff!important;
 }
 
 #greenButton:hover{
-    background-color: #189966!important;
+    background-color: #2f72c9!important;
     box-shadow: none!important;
 }
 .linkHover:hover{
@@ -21,3 +21,4 @@
 .checkbox{
     color:#08C177!important
 }
+

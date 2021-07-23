@@ -70,11 +70,12 @@ class Register extends Component {
     };
     render() {
         const {errors} = this.state;
-        return (<div className="container">
-                          <img className='lendingTreeLogo' src='https://upload.wikimedia.org/wikipedia/en/f/f0/LT_Logo_-_Gradient.png' alt='lending tree'></img>
-
-            <div className="row form">
-                <div className="col s8 offset-s2">
+        return (<div className="formContainer">
+            <div style={
+                    {marginTop: "8rem",
+                width:'50rem'}
+                } className="row form">
+                <div className="">
                     <Link to="/" className="btn-flat waves-effect">
                         <i className="material-icons left linkHover">keyboard_backspace</i>
                         Back to
