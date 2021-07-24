@@ -1,13 +1,33 @@
 .dashboardWrapper{
-    height: 80vh;
+    height: 55rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     background-color: rgb(255, 255, 255);
+    min-height: 55rem;
 }
 
 .dashboardText{
     font-style: italic;
     font-size: 1.4rem;
+}
+
+#chartdiv {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .creditScore{
+      color:#29bd78;
+  }
+  .lowCredit{
+    color:#bd2929;
+}
+.medCredit{
+    color:#bd9629;
+}
+
+.highCredit{
+    color:#29bd78;
 }

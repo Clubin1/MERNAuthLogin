@@ -3,9 +3,9 @@ const Schema = mongoose.Schema
 
 // Credit Calc
 function creditScoreCalc(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    var credArrat = ['300', '400', '500','600', '700', '800']; 
+    var randcred = credArrat[(Math.random() * credArrat.length) | 0]
+    return randcred
 }
 
 function getBank(){
