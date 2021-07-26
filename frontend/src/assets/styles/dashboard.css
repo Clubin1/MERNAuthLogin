@@ -1,33 +1,101 @@
-.dashboardWrapper{
-    height: 55rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    min-height: 55rem;
+.dashboardWrapper {
+  background-color: rgb(255, 255, 255);
 }
 
-.dashboardText{
-    font-style: italic;
-    font-size: 1.4rem;
+.dashboardText {
+  font-style: italic;
+  font-size: 1.4rem;
 }
 
 #chartdiv {
-    width: 100%;
-    height: 250px;
-  }
-  
-  .creditScore{
-      color:#29bd78;
-  }
-  .lowCredit{
-    color:#bd2929;
-}
-.medCredit{
-    color:#bd9629;
+  width: 100%;
+  height: 250px;
 }
 
-.highCredit{
-    color:#29bd78;
+.creditScore {
+  color: #29bd78;
+}
+.lowCredit {
+  color: #bd2929;
+}
+.medCredit {
+  color: #bd9629;
+}
+
+.highCredit {
+  color: #29bd78;
+}
+
+.purposeWrapper{
+  height: 72rem;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  background-color: rgb(238, 236, 236);
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.innerWrapper{
+  width:60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.serviceWrapper{
+  width: 20rem;
+  height: 20rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 1pt 0.5pt #00000034;
+}
+.welcomeSection{
+  height: 70rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 50rem;
+}
+
+.purposeText{
+  position: absolute;
+}
+
+.questionWrapper{
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.lendingTreeAcademy{
+  height: 60rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lendingImage{
+  height: 30rem;
+  width: 40rem;
+  background: url("https://www.lendingtree.com/content/uploads/2019/03/bouquet-lt-academy.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
