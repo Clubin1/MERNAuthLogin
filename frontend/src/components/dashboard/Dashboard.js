@@ -17,6 +17,11 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+import {Link} from "react-router-dom";
+
 class Dashboard extends Component {
   constructor() {
     super();
@@ -44,6 +49,11 @@ class Dashboard extends Component {
 
 
 componentDidMount() {
+
+  AOS.init({
+    // initialise with other settings
+    duration : 1000
+  });
   const { user } = this.props.auth;
 
   am4core.useTheme(am4themes_animated);
@@ -154,7 +164,8 @@ render() {
       thankYou = <h4 className="flow-text dashboardText grey-text text-darken-1">Thank you for answering our survey!</h4>
     }
 return (
-      <div className="dashboardWrapper">
+      <div 
+      className="dashboardWrapper">
         <div className="welcomeSection">
         <h4>
               <h4 className="flow-text dashboardText"> Your Bank: {user.bankAccount}</h4>
@@ -184,22 +195,38 @@ return (
             </button>
 
         </div>
-
+        <div className="questionCenter">
         <div className="questionWrapper">
-        <h4 className="questionTitle">
+        <h4 
+                    data-aos-anchor-easing='ease-in-out'
+                    data-aos='fade'
+                    data-aos-offset='100' 
+        className="questionTitle">
           Why are you here today? <br></br> Please choose one
         </h4>
         <FormControl component="fieldset" >
                             <FormGroup>
                             <FormControlLabel
+                            data-aos-anchor-easing='ease-in-out'
+                            data-aos='fade-left'
+                            data-aos-offset='100'
+                            data-aos-delay='100' 
                                 control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='studentAcc'name="studentAcc" />}
                                 label="Student Account"
                             />
                             <FormControlLabel
+                            data-aos-anchor-easing='ease-in-out'
+                            data-aos='fade-left'
+                            data-aos-offset='100'
+                            data-aos-delay='200'
                                 control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)} id='personalAcc' name="personalAcc" />}
                                 label="Personal Account"
                             />
                             <FormControlLabel
+                            data-aos-anchor-easing='ease-in-out'
+                            data-aos='fade-left'
+                            data-aos-offset='100'
+                            data-aos-delay='300'
                                 control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='homeAcc' name="homeAcc" />}
                                 label="Home Account"
                             />
@@ -208,6 +235,89 @@ return (
 
             {thankYou}
 
+        </div>
+        </div>
+      
+
+        <div className="serviceWrapper">
+          <div className="serviceCenter">
+            <h4            
+            data-aos-anchor-easing='ease-in-out'
+            data-aos='fade-up'
+            data-aos-offset='200' 
+            className="serviceTitle">
+                Learn About the LendingTree Academy
+            </h4>
+
+            <div
+            data-aos-anchor-easing='ease-in-out'
+            data-aos='fade-up'
+            data-aos-offset='200'
+            className="serviceItem">
+                <h5 className="serviceItemColor1"> Loan requests </h5>
+            </div>
+            <div 
+                        data-aos-anchor-easing='ease-in-out'
+                        data-aos='fade-up'
+                        data-aos-offset='200'
+                        data-aos-delay='50'
+            className="serviceItem">
+              <h5 className="serviceItemColor2"> You're eligible for a reverse mortgage </h5>
+            </div>      
+            
+            <div 
+                                    data-aos-anchor-easing='ease-in-out'
+                                    data-aos='fade-up'
+                                    data-aos-offset='200'
+                                    data-aos-delay='100'
+            className="serviceItem">
+              <h5 className="serviceItemColor3"> Need a new car? We can help </h5>
+            </div>
+            <div 
+                                                data-aos-anchor-easing='ease-in-out'
+                                                data-aos='fade-up'
+                                                data-aos-offset='200'
+                                                data-aos-delay='150'
+            className="serviceItem">
+              <h5 className="serviceItemColor4"> Connect your bank accounts </h5>
+            </div>
+            <div 
+                                                data-aos-anchor-easing='ease-in-out'
+                                                data-aos='fade-up'
+                                                data-aos-offset='200'
+                                                data-aos-delay='200'
+            className="serviceItem">
+              <h5 className="serviceItemColor5"> You should increase your available credit </h5>
+            </div>
+    
+  
+          </div>
+        </div>
+
+        <div className="academyCenter">
+        <div className="academyWrapper">
+          <h4 className="academyTitle">
+            Learn About the LendingTree Academy
+          </h4>
+
+          <img src="https://www.lendingtree.com/content/uploads/2019/03/bouquet-lt-academy.png" className="academyImage">
+
+          </img>
+
+            <a href="https://www.lendingtree.com/academy/">
+            <button
+              style={{
+                width: "32rem",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+              }}
+              id="greenButton"
+              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+            >
+              Learn more
+            </button>
+            </a>
+        </div>
         </div>
       </div>
     );
