@@ -1,6 +1,3 @@
-.dashboardWrapper {
-  background-color: rgb(255, 255, 255);
-}
 
 .dashboardText {
   font-style: italic;
@@ -8,94 +5,109 @@
 }
 
 #chartdiv {
-  width: 100%;
-  height: 250px;
+    width: 100%;
+    height: 250px;
+  }
+  
+  .creditScore{
+      color:#29bd78;
+  }
+  .lowCredit{
+    color:#bd2929;
+}
+.medCredit{
+    color:#bd9629;
 }
 
-.creditScore {
-  color: #29bd78;
-}
-.lowCredit {
-  color: #bd2929;
-}
-.medCredit {
-  color: #bd9629;
+.highCredit{
+    color:#29bd78;
 }
 
-.highCredit {
-  color: #29bd78;
-}
-
-.purposeWrapper{
-  height: 72rem;
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  background-color: rgb(238, 236, 236);
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-}
-
-.innerWrapper{
-  width:60%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.serviceWrapper{
-  width: 20rem;
-  height: 20rem;
-  margin-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 1pt 0.5pt #00000034;
-}
-.welcomeSection{
-  height: 70rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
-  text-align: center;
-  min-height: 50rem;
-}
-
-.purposeText{
-  position: absolute;
+.creditSubHead{
+    margin-top: -1rem;
+    margin-bottom: 1rem;
 }
 
 .questionWrapper{
-  height: 30rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-
+    height: 23rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+    width: 50%;
 }
 
-.lendingTreeAcademy{
-  height: 60rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.welcomeSection{
+    height: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
 }
 
-.lendingImage{
-  height: 30rem;
-  width: 40rem;
-  background: url("https://www.lendingtree.com/content/uploads/2019/03/bouquet-lt-academy.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+.questionTitle, .dashboardText, .academyTitle, .serviceTitle{
+    color:#17293f;
+}
+
+.academyWrapper{
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+    width: 50%;
+
+}
+.academyCenter, .questionCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.serviceWrapper{
+    height: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+}
+
+.serviceWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.serviceCenter{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 140rem;
+    flex-direction: column;
+}
+
+.serviceItem{
+    height: 10rem;
+    margin-top: 2rem;
+    text-align: left;
+    box-shadow: 0 0 10pt 0.5pt #00000010;
+    transition: 200ms ease all ;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.serviceItem:hover{
+    height: 10rem;
+    margin-top: 2rem;
+    text-align: left;
+    box-shadow: 0 0 10pt 0.5pt #00000020;
+}
+
+.academyImage{
 }
