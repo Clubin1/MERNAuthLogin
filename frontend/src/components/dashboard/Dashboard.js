@@ -9,11 +9,39 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
+
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Checkbox from '@material-ui/core/Checkbox';
+
 class Dashboard extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      clicked: false
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      clicked: true
+    });
+
+    console.log(this.state.clicked)
+  }
+  
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
 };
+
+
 
 componentDidMount() {
   const { user } = this.props.auth;
@@ -92,43 +120,58 @@ componentWillUnmount() {
   }
 }
 render() {
+    let votedDiv = <p>Hello I voted</p>
     const { user } = this.props.auth;
     console.log(user)
 
     let creditText;
+    let thankYou;
+
     if(user.creditScore < 400){
-      creditText = <p>Your credit score is <span className="lowCredit">Poor</span></p>
+      creditText = <div>
+      <h4 className="dashboardText">Your credit score is <span className="lowCredit">Poor</span></h4>
+      <a href="https://www.lendingtree.com/credit-repair/how-to-improve-your-credit-score/"><h4 className="creditSubHead">Learn how to fix your credit score</h4></a>
+      <a href="https://www.lendingtree.com/academy/">learn more about LendingTree academy</a>
+    </div>
     } else if (user.creditScore < 500){
-      creditText = <p>Your credit score is <span className="lowCredit">Poor</span></p>
+      creditText = <div>
+      <h4 className="questionTitle">Your credit score is <span className="lowCredit">Poor</span></h4>
+      <a href="https://www.lendingtree.com/credit-repair/how-to-improve-your-credit-score/"><h4>Learn how to fix your credit score</h4></a>
+      <a href="https://www.lendingtree.com/academy/"><h4>Learn more about LendingTree academy</h4></a>
+    </div>
     }
     else if (user.creditScore < 600){
-      creditText = <p>Your credit score is <span className="medCredit">Fair</span></p>
+      creditText = <h4>Your credit score is <span className="medCredit">Fair</span></h4>
     }
     else if (user.creditScore < 700){
-      creditText = <p>Your credit score is <span className="highCredit">Good</span></p>
+      creditText = <h4>Your credit score is <span className="highCredit">Good</span></h4>
     }
     else if (user.creditScore < 800){
-      creditText = <p>Your credit score is <span className="highCredit">Very Good</span></p>
+      creditText = <h4>Your credit score is <span className="highCredit">Very Good</span></h4>
+    }
+
+    if(this.state.clicked == true){
+      thankYou = <h4 className="flow-text dashboardText grey-text text-darken-1">Thank you for answering our survey!</h4>
     }
 return (
       <div className="dashboardWrapper">
         <div className="welcomeSection">
         <h4>
-              <p className="flow-text dashboardText"> Your Bank: {user.bankAccount}</p>
+              <h4 className="flow-text dashboardText"> Your Bank: {user.bankAccount}</h4>
+              <h4 className="flow-text dashboardText grey-text text-darken-1">Your credit score:
+               <span className="creditScore"> {user.creditScore}</span></h4>
               <div id="chartdiv"></div>
-              <p className="flow-text dashboardText grey-text text-darken-1">Your credit score:
-               <span className="creditScore"> {user.creditScore}</span></p>
               {creditText}
-              <p className="flow-text dashboardText grey-text text-darken-1">
+              <h4 className="flow-text dashboardText grey-text text-darken-1">
                 Welcome to your personal dashboard, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}
                 <br></br>
                 View your financial status
-              </p>
+              </h4>
               
             </h4>
             <button
               style={{
-                width: "150px",
+                width: "16rem",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
                 marginTop: "1rem"
@@ -139,6 +182,31 @@ return (
             >
               Logout
             </button>
+
+        </div>
+
+        <div className="questionWrapper">
+        <h4 className="questionTitle">
+          Why are you here today? <br></br> Please choose one
+        </h4>
+        <FormControl component="fieldset" >
+                            <FormGroup>
+                            <FormControlLabel
+                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='studentAcc'name="studentAcc" />}
+                                label="Student Account"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)} id='personalAcc' name="personalAcc" />}
+                                label="Personal Account"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='homeAcc' name="homeAcc" />}
+                                label="Home Account"
+                            />
+                            </FormGroup>
+        </FormControl>
+
+            {thankYou}
 
         </div>
       </div>

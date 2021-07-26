@@ -1,12 +1,3 @@
-.dashboardWrapper{
-    height: 55rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    min-height: 55rem;
-}
 
 .dashboardText{
     font-style: italic;
@@ -30,4 +21,31 @@
 
 .highCredit{
     color:#29bd78;
+}
+
+.creditSubHead{
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.questionWrapper{
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+}
+
+.welcomeSection{
+    height: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+}
+
+.questionTitle, .dashboardText{
+    color:#17293f;
 }

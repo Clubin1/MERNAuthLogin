@@ -14,6 +14,12 @@ function getBank(){
     return rand
 }
 
+function getMoney(min, max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 // Create Schema
 const UserSchema = new Schema({
     name: {
@@ -54,6 +60,14 @@ const UserSchema = new Schema({
     bankAccount: {
         type: String,
         default: getBank()
+    },
+    bankSum: {
+        type: Number,
+        default: getMoney(10000, 100000)
+    },
+    reasonVisit: {
+        type: String,
+        default: ""
     }
 })
 
