@@ -114,3 +114,7 @@ input[type="email"]:focus{
 .hover:hover{
     color:#29bd78;
 }
+
+#thingything{
+    background-color: transparent!important;
+}

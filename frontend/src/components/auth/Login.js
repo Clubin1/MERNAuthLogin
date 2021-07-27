@@ -44,6 +44,17 @@ class Login extends Component {
         };
         this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
     };
+
+    guestUser = e => {
+        e.preventDefault();
+        let email = "guestemail@gmail.com"
+        let pass = "123123"
+        const userData = {
+            email: email,
+            password: pass
+        }
+        this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+    }
     render() {
         const {errors} = this.state;
         return (<div className='center'>
@@ -142,6 +153,8 @@ class Login extends Component {
                                 className="btn btn-large waves-effect waves-light hoverable blue accent-3">
                                 Login
                             </button>
+
+                        
                             
                         </div>
                         <div className="col s12"
@@ -150,7 +163,13 @@ class Login extends Component {
                         }>
                         <p className="grey-text text-darken-1">
                             
-                            <Link className='textColor' to="/register"> Log in with a free lending tree account here</Link>
+        
+                              <Link
+                                onClick={this.guestUser}
+                                className="waves-effect waves-light">
+                                Login with a guest user for free!
+                            </Link>
+                          
                         </p>
                         </div>
                     </form>

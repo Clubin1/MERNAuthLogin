@@ -139,7 +139,8 @@ render() {
 
     if(user.creditScore < 400){
       creditText = <div>
-      <h4 className="dashboardText">Your credit score is <span className="lowCredit">Poor</span></h4>
+      <h4 
+      className="dashboardText">Your credit score is <span className="lowCredit">Poor</span></h4>
       <a href="https://www.lendingtree.com/credit-repair/how-to-improve-your-credit-score/"><h4 className="creditSubHead">Learn how to fix your credit score</h4></a>
       <a href="https://www.lendingtree.com/academy/">learn more about LendingTree academy</a>
     </div>
@@ -161,19 +162,31 @@ render() {
     }
 
     if(this.state.clicked == true){
-      thankYou = <h4 className="flow-text dashboardText grey-text text-darken-1">Thank you for answering our survey!</h4>
+      thankYou = <h4
+
+      className="flow-text dashboardText grey-text text-darken-1">Thank you for answering our survey!</h4>
     }
 return (
       <div 
-      className="dashboardWrapper">
+      className="dashboardWrapper
+      "
+      data-aos-anchor-easing='ease-in-out'
+      data-aos='fade'
+      data-aos-delay='200'>
         <div className="welcomeSection">
         <h4>
-              <h4 className="flow-text dashboardText"> Your Bank: {user.bankAccount}</h4>
-              <h4 className="flow-text dashboardText grey-text text-darken-1">Your credit score:
-               <span className="creditScore"> {user.creditScore}</span></h4>
-              <div id="chartdiv"></div>
+              <h4
+              className="flow-text dashboardText"> Your Bank: {user.bankAccount}</h4>
+              <h4 
+              className="flow-text dashboardText grey-text text-darken-1">Your credit score:
+               <span
+                className="creditScore"> {user.creditScore}</span></h4>
+              <div 
+
+              id="chartdiv"></div>
               {creditText}
-              <h4 className="flow-text dashboardText grey-text text-darken-1">
+              <h4 
+              className="flow-text dashboardText grey-text text-darken-1">
                 Welcome to your personal dashboard, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}
                 <br></br>
                 View your financial status
@@ -296,11 +309,21 @@ return (
 
         <div className="academyCenter">
         <div className="academyWrapper">
-          <h4 className="academyTitle">
+          <h4 
+                data-aos-anchor-easing='ease-in-out'
+                data-aos='fade-left'
+                data-aos-offset='100'
+                data-aos-delay='200'
+          className="academyTitle">
             Learn About the LendingTree Academy
           </h4>
 
-          <img src="https://www.lendingtree.com/content/uploads/2019/03/bouquet-lt-academy.png" className="academyImage">
+          <img
+                    data-aos-anchor-easing='ease-in-out'
+                    data-aos='fade-right'
+                    data-aos-offset='100'
+                    data-aos-delay='300'
+          src="https://www.lendingtree.com/content/uploads/2019/03/bouquet-lt-academy.png" className="academyImage">
 
           </img>
 
@@ -312,6 +335,9 @@ return (
                 letterSpacing: "1.5px",
               }}
               id="greenButton"
+              data-aos-anchor-easing='ease-in-out'
+              data-aos='fade-left'
+              data-aos-delay='400'
               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
             >
               Learn more
