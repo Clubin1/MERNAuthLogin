@@ -1,0 +1,23 @@
+.userSection{
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.userImage{
+    border-radius: 50%;
+    height: 8rem;
+    width: 9rem;
+}
+
+.profileBtn{
+    margin-left: 0rem;
+}
+.profileBtn2{
+    margin-left: 1rem;
+}
+.thingythingthing{
+    width: 30rem;
+}

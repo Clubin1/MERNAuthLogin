@@ -129,7 +129,6 @@ componentWillUnmount() {
   }
 }
 render() {
-    let votedDiv = <p>Hello I voted</p>
     const { user } = this.props.auth;
     console.log(user)
 
@@ -138,7 +137,8 @@ render() {
 
     if(user.creditScore < 400){
       creditText = <div>
-      <h4 className="dashboardText">Your credit score is <span className="lowCredit">Poor</span></h4>
+      <h4 
+      className="dashboardText">Your credit score is <span className="lowCredit">Poor</span></h4>
       <a href="https://www.lendingtree.com/credit-repair/how-to-improve-your-credit-score/"><h4 className="creditSubHead">Learn how to fix your credit score</h4></a>
       <a href="https://www.lendingtree.com/academy/">learn more about LendingTree academy</a>
     </div>
@@ -155,24 +155,40 @@ render() {
     else if (user.creditScore < 700){
       creditText = <h4>Your credit score is <span className="highCredit">Good</span></h4>
     }
-    else if (user.creditScore < 800){
+    else if (user.creditScore <= 800){
       creditText = <h4>Your credit score is <span className="highCredit">Very Good</span></h4>
     }
 
     if(this.state.clicked == true){
-      thankYou = <h4 className="flow-text dashboardText grey-text text-darken-1">Thank you for answering our survey!</h4>
+      thankYou = <h4
+      className="dashboardWrapper
+      "
+      data-aos-anchor-easing='ease-in-out'
+      data-aos='fade-left'
+      data-aos-delay='100'
+      className="flow-text dashboardText grey-text text-darken-1">Thank you for answering our survey!</h4>
     }
 return (
       <div 
-      className="dashboardWrapper">
+      className="dashboardWrapper
+      "
+      data-aos-anchor-easing='ease-in-out'
+      data-aos='fade'
+      data-aos-delay='200'>
         <div className="welcomeSection">
         <h4>
-              <h4 className="flow-text dashboardText"> Your Bank: {user.bankAccount}</h4>
-              <h4 className="flow-text dashboardText grey-text text-darken-1">Your credit score:
-               <span className="creditScore"> {user.creditScore}</span></h4>
-              <div id="chartdiv"></div>
+              <h4
+              className="flow-text dashboardText"> Your Bank: {user.bankAccount}</h4>
+              <h4 
+              className="flow-text dashboardText grey-text text-darken-1">Your credit score:
+               <span
+                className="creditScore"> {user.creditScore}</span></h4>
+              <div 
+
+              id="chartdiv"></div>
               {creditText}
-              <h4 className="flow-text dashboardText grey-text text-darken-1">
+              <h4 
+              className="flow-text dashboardText grey-text text-darken-1">
                 Welcome to your personal dashboard, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}
                 <br></br>
                 View your financial status
@@ -205,29 +221,41 @@ return (
         </h4>
         <FormControl component="fieldset" >
                             <FormGroup>
-                            <FormControlLabel
-                            data-aos-anchor-easing='ease-in-out'
-                            data-aos='fade-left'
-                            data-aos-offset='100'
-                            data-aos-delay='100' 
-                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='studentAcc'name="studentAcc" />}
-                                label="Student Account"
-                            />
-                            <FormControlLabel
-                            data-aos-anchor-easing='ease-in-out'
-                            data-aos='fade-left'
-                            data-aos-offset='100'
-                            data-aos-delay='200'
-                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)} id='personalAcc' name="personalAcc" />}
-                                label="Personal Account"
-                            />
+                           
                             <FormControlLabel
                             data-aos-anchor-easing='ease-in-out'
                             data-aos='fade-left'
                             data-aos-offset='100'
                             data-aos-delay='300'
                                 control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='homeAcc' name="homeAcc" />}
-                                label="Home Account"
+                                label="Browse Loans"
+                            />
+
+<FormControlLabel
+                            data-aos-anchor-easing='ease-in-out'
+                            data-aos='fade-left'
+                            data-aos-offset='100'
+                            data-aos-delay='400'
+                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='homeAcc' name="homeAcc" />}
+                                label="Loan Officer"
+                            />
+
+<FormControlLabel
+                            data-aos-anchor-easing='ease-in-out'
+                            data-aos='fade-left'
+                            data-aos-offset='100'
+                            data-aos-delay='500'
+                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='homeAcc' name="homeAcc" />}
+                                label="Lending Tree Academy"
+                            />
+
+<FormControlLabel
+                            data-aos-anchor-easing='ease-in-out'
+                            data-aos='fade-left'
+                            data-aos-offset='100'
+                            data-aos-delay='600'
+                                control={<Checkbox className='checkbox'  onChange={e => this.handleClick(e)}id='homeAcc' name="homeAcc" />}
+                                label="Check Credit Score"
                             />
                             </FormGroup>
         </FormControl>
@@ -248,21 +276,34 @@ return (
                 Learn About the LendingTree Academy
             </h4>
 
-            <div
+           <Link>
+           <div
             data-aos-anchor-easing='ease-in-out'
             data-aos='fade-up'
             data-aos-offset='200'
             className="serviceItem">
                 <h5 className="serviceItemColor1"> Loan requests </h5>
+                <h6 className="serviceText">View your offers</h6>
+                <div className="serviceItemBtn1">
+                Loan Requests
+              </div>
             </div>
-            <div 
+           </Link>
+         <Link>
+         <div 
                         data-aos-anchor-easing='ease-in-out'
                         data-aos='fade-up'
                         data-aos-offset='200'
                         data-aos-delay='50'
             className="serviceItem">
-              <h5 className="serviceItemColor2"> You're eligible for a reverse mortgage </h5>
-            </div>      
+              <h5 className="serviceItemColor2"> Pay off your credit card debt with a loan </h5>
+              <h6 className="serviceText">Get the most accurate savings alerts and cashflow analysis when you link your accounts to LendingTree.</h6>
+              <div className="serviceItemBtn6">
+               Save Money
+              </div>
+            </div> 
+         </Link>     
+            <Link>
             
             <div 
                                     data-aos-anchor-easing='ease-in-out'
@@ -271,7 +312,13 @@ return (
                                     data-aos-delay='100'
             className="serviceItem">
               <h5 className="serviceItemColor3"> Need a new car? We can help </h5>
+              <h6 className="serviceText">Comparison shop our auto loan lenders. Great cars are more affordable than you think.</h6>
+              <div className="serviceItemBtn2">
+                Take a Look
+              </div>
             </div>
+            </Link>
+            <Link>
             <div 
                                                 data-aos-anchor-easing='ease-in-out'
                                                 data-aos='fade-up'
@@ -279,15 +326,26 @@ return (
                                                 data-aos-delay='150'
             className="serviceItem">
               <h5 className="serviceItemColor4"> Connect your bank accounts </h5>
+              <h6 className="serviceText">Great score, but you need more available credit. A 0% transfer card may be a smart move.</h6>
+              <div className="serviceItemBtn3">
+                Do this
+              </div>
             </div>
-            <div 
+            </Link>
+           <Link>
+           <div 
                                                 data-aos-anchor-easing='ease-in-out'
                                                 data-aos='fade-up'
                                                 data-aos-offset='200'
                                                 data-aos-delay='200'
             className="serviceItem">
               <h5 className="serviceItemColor5"> You should increase your available credit </h5>
+              <h6 className="serviceText">Great score, but you need more available credit. A 0% transfer card may be a smart move.</h6>
+              <div className="serviceItemBtn4">
+                Credit Alert
+              </div>
             </div>
+           </Link>
     
   
           </div>
@@ -295,11 +353,21 @@ return (
 
         <div className="academyCenter">
         <div className="academyWrapper">
-          <h4 className="academyTitle">
+          <h4 
+                data-aos-anchor-easing='ease-in-out'
+                data-aos='fade-left'
+                data-aos-offset='100'
+                data-aos-delay='200'
+          className="academyTitle">
             Learn About the LendingTree Academy
           </h4>
 
-          <img src="https://www.lendingtree.com/content/uploads/2019/03/bouquet-lt-academy.png" className="academyImage">
+          <img
+                    data-aos-anchor-easing='ease-in-out'
+                    data-aos='fade-right'
+                    data-aos-offset='100'
+                    data-aos-delay='300'
+          src="https://www.lendingtree.com/content/uploads/2019/03/bouquet-lt-academy.png" className="academyImage">
 
           </img>
 
@@ -311,6 +379,10 @@ return (
                 letterSpacing: "1.5px",
               }}
               id="greenButton"
+              data-aos-anchor-easing='ease-in-out'
+              data-aos='fade-left'
+              data-aos-delay='400'
+              data-aos-offset='-300'
               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
             >
               Learn more

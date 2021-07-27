@@ -14,6 +14,11 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Settings from './components/dashboard/Settings'
+import Profile from './components/dashboard/Profile'
+import Insurance from "./components/dashboard/Insurance";
+import UserLoans from './components/dashboard/UserLoans'
+import SearchLoans from './components/dashboard/SearchLoans'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -46,6 +51,21 @@ class App extends Component {
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/user/settings" component={Settings} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/user/profile" component={Profile} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/user/insurance" component={Insurance} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/user/loans" component={UserLoans} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/user/loans/search" component={SearchLoans} />
             </Switch>
             <Footer/>
           </div>

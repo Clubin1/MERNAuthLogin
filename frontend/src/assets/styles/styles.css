@@ -1,7 +1,7 @@
 .textColor{
     color:#4193ff!important;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 #greenButton{
     background-color: #4193ff!important;
 }
@@ -22,3 +22,6 @@
     color:#08C177!important
 }
 
+*{
+    font-family: 'Roboto', 'sans-serif';
+}
