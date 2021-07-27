@@ -9,7 +9,10 @@ nav{
 .navbar{
     background-color: #263343f3!important;
     top: 0;
+    
 }
+
+
 .lendingTree{
     height: 4rem;
 }
@@ -46,7 +49,7 @@ nav{
 }
 .nav-link{
     transition: 200ms ease all;
-    color:white!important;
+    color:rgb(255, 255, 255)!important;
 }
 
 
