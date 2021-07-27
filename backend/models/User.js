@@ -68,6 +68,10 @@ const UserSchema = new Schema({
     reasonVisit: {
         type: String,
         default: ""
+    },
+    levelExp: {
+        type: Number,
+        default: 1
     }
 })
 
