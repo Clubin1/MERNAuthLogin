@@ -21,3 +21,29 @@
 .thingythingthing{
     width: 30rem;
 }
+
+
+.loanSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    min-height: 100rem;
+}
+
+.loanCenter{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#qweqwe{
+    width: 16rem;
+}
+.serviceItem{
+    min-width: 60rem;
+}
+#nice{
+    padding-bottom: 2rem!important;
+}

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {logoutUser} from "../../actions/authActions";
-
+import axios from 'axios'
 import '../../assets/styles/form.css'
 import '../../assets/styles/dashboard.css'
 import * as am4core from "@amcharts/amcharts4/core";
@@ -276,7 +276,7 @@ return (
                 Learn About the LendingTree Academy
             </h4>
 
-           <Link>
+           <Link to='/user/loans'>
            <div
             data-aos-anchor-easing='ease-in-out'
             data-aos='fade-up'

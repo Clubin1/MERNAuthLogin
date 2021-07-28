@@ -3,6 +3,7 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const keys = require('../../config/keys')
+const app = express()
 
 // Load input validation
 const validateRegisterInput = require('../../validation/register')
@@ -10,7 +11,7 @@ const validateLoginInput = require('../../validation/login')
 
 // Load User model
 const User = require('../../models/User')
-
+// Load loan file
 // @route POST api/users/register
 // @desc Register user
 // @access public
@@ -50,9 +51,10 @@ router.post('/register', (req, res) => { // Form validation
 // @desc add to user
 // @access public
 
-router.post('/user/userVote:_id', (req, res) => { 
+// router.post('/user/userVote:_id', (req, res) => { 
    
-})
+// })
+
 
 // @route POST api/users/login
 // @desc Login user and return JWT token
