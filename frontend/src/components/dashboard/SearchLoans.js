@@ -97,8 +97,10 @@ class SearchLoans extends React.Component {
                     </h4>
                     <h6 data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="serviceText twotime">Look at all the loans we have to offer
                     </h6>
-                    <div data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="input-field ">
-                        <input id="asdasdasdasdasdasdasd" value={this.state.inputValue} onChange={this.filterOnChange} id="password2" type="text"/>
+                    <div
+                    id="asdasdasdasdasdasdasd"
+                    data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="input-field ">
+                        <input value={this.state.inputValue} onChange={this.filterOnChange} id="password2" type="text"/>
                         <label htmlFor="password2">Search by name, rates, scores etc</label>
                     </div>
 

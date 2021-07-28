@@ -47,13 +47,9 @@ router.post('/register', (req, res) => { // Form validation
 })
 
 
-// @route POST api/users/reasonVisit
-// @desc add to user
+// @route POST api/users/update
+// @desc update user fields
 // @access public
-
-// router.post('/user/userVote:_id', (req, res) => { 
-   
-// })
 
 
 // @route POST api/users/login
