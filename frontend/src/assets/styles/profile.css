@@ -26,16 +26,16 @@
 .loanSection{
     width: 100%;
     display: flex;
-    justify-content: center;    
-    padding-top: 10rem;
     padding-bottom: 10rem;
-    min-height: 100rem;
+    min-height: 70rem;
+    padding-top: 10rem;
+    justify-content: center;
 }
 
-.loanCenter{
+.loanCenter3{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 #qweqwe{
@@ -46,4 +46,19 @@
 }
 #nice{
     padding-bottom: 2rem!important;
+}
+#loanthingythingthingthingthing{
+margin-top: -10rem;
+text-align: center;
+height: 40rem!important;
+}
+.loanCenter{
+    width: 60rem;
+}
+
+.barr{
+    height: 5rem;
+}
+#asdasdasdasdasdasdasd{
+    padding-left: 20rem!important;
 }

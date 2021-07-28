@@ -13,7 +13,6 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 import {Link} from "react-router-dom";
-import flatten from 'flat'
 class UserLoans extends React.Component {
     constructor() {
         super()
@@ -62,6 +61,18 @@ class UserLoans extends React.Component {
                     loanType: "Home Loan",
                     creditScore: 500,
                     interestRate: 2.3
+                },
+                {
+                    loanName: "Loan Nine",
+                    loanType: "Personal Loan",
+                    creditScore: 600,
+                    interestRate: 2.6
+                },        
+                {
+                    loanName: "Loan Ten",
+                    loanType: "Car Loan",
+                    creditScore: 700,
+                    interestRate: 2
                 }
             ]
         }
@@ -75,22 +86,43 @@ class UserLoans extends React.Component {
 
     }
     render() {
-        var tifOptions = [];
-        let {loans} = this.state
-        
-        // filter loans array to remove any with higher credit score
         const {user} = this.props.auth;
+        let userCredit = user.creditScore
+        let {loans} = this.state
+        let finalArr = []
+        let arrayLength = loans.length
+        for( var i = 0; i < arrayLength; i++){
+            if(loans[i].creditScore <= userCredit){
+                finalArr.push(loans[i])
+                console.log(finalArr)
+            }
+            else {
+                return(
+                    <div id="loanthingythingthingthingthing" className="loanSection">
+                    <div className="loanCenter3">
+                        <h4 data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="serviceTitle twotime">
+                            Your personal loans
+                        </h4>
+                        <h6 data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="serviceText twotime">No loans to show right now
+                        </h6>
+                   
+                        </div>
+                </div>
+                )
+            }
+        }
+        // filter loans array to remove any with higher credit score
         return (
             <div className="loanSection">
-                <div className="loanCenter">
+                <div className="loanCenter3">
                     <h4 data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="serviceTitle twotime">
                         Your personal loans
                     </h4>
                     <h6 data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="serviceText twotime">View your personal loans you're eligible for
                     </h6>
-
+              
                     {
-                    loans.map((loan, index) => {
+                    finalArr.map((loan, index) => {
                         return (
                             <div className="as">
                                 <div key={index}>

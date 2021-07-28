@@ -53,9 +53,27 @@ class SearchLoans extends React.Component {
                     loanType: "Home Loan",
                     creditScore: 500,
                     interestRate: 2.3
+                },
+                {
+                    loanName: "Loan Nine",
+                    loanType: "Personal Loan",
+                    creditScore: 600,
+                    interestRate: 2.6
+                },        
+                {
+                    loanName: "Loan Ten",
+                    loanType: "Car Loan",
+                    creditScore: 700,
+                    interestRate: 2
                 }
-            ]
+            ],
+            inputValue: ''
         }
+    }
+    filterOnChange = (event) => {
+        this.setState({
+            inputValue: event.target.value
+        })
     }
 
     async componentDidMount() {
@@ -65,7 +83,12 @@ class SearchLoans extends React.Component {
     }
     render() {
         // Filter loans based off search bar
-        let {loans} = this.state
+        let filterdLoans = this.state.loans.filter(loan => {
+            return (
+                loan.loanName.toLowerCase().match(this.state.inputValue.toLowerCase()) ||  loan.loanType.toLowerCase().match(this.state.inputValue.toLowerCase()) 
+            )
+        })
+        console.log(this.state.inputValue)
         return (
             <div className="loanSection">
                 <div className="loanCenter">
@@ -74,13 +97,13 @@ class SearchLoans extends React.Component {
                     </h4>
                     <h6 data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="serviceText twotime">Look at all the loans we have to offer
                     </h6>
-                    <div id="nice" data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="input-field col s12 barrr">
-                        <input id="password2" type="text"/>
+                    <div data-aos-anchor-easing='ease-in-out' data-aos='fade-up' data-aos-offset='200' className="input-field ">
+                        <input id="asdasdasdasdasdasdasd" value={this.state.inputValue} onChange={this.filterOnChange} id="password2" type="text"/>
                         <label htmlFor="password2">Search by name, rates, scores etc</label>
                     </div>
 
                     {
-                    loans.map((loan, index) => {
+                    filterdLoans.map((loan, index) => {
                         return (
                             <div className="as">
                                 <div key={index}>
