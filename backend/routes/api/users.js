@@ -35,9 +35,6 @@ router.post('/register', (req, res) => { // Form validation
                 bcrypt.hash(newUser.password, salt, (err, hash) => {
                     if (err) 
                         throw err
-
-                    
-
                     newUser.password = hash
                     newUser.save().then(user => res.json(user)).catch(err => console.log(err))
                 })
@@ -46,10 +43,37 @@ router.post('/register', (req, res) => { // Form validation
     })
 })
 
-
 // @route POST api/users/update
-// @desc update user fields
+// @desc update user fields and get user ID
 // @access public
+router.get("/settings/:id", (req, res) => {
+    const id = req.params.id;
+    User.findById(id, (err, user) => {
+      res.json(user);
+    });
+});
+  
+router.post("/settings/:id", (req,res) => {
+    const id = req.params.id;
+    User.findById(id, (err, user) => {
+      if (!user) {
+        res.status(404).send("user not found");
+      } else {
+        user.name = req.body.name
+        user.email = req.body.email
+        user.bankAccount = req.body.bankAccount
+        user.bankSum = req.body.bankSum
+        user.levelExp = req.body.levelExp
+        user.creditScore = req.body.creditScore
+        user
+          .save()
+          .then((user) => {
+            res.json(user);
+          })
+          .catch((err) => res.status(500).send(err.message));
+      }
+    });
+})
 
 
 // @route POST api/users/login

@@ -26,14 +26,6 @@ require('./config/passport')(passport)
 // Routes
 app.use('/api/users', users)
 
-app.get('/loans', (req, res) => {
-    Loan.find({}, function(err, loans) {
-       res.json({
-           loans
-       })
-    });
-});
-
 // Port
 const PORT = process.env.PORT || 5000;
 

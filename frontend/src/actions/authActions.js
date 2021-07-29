@@ -41,6 +41,20 @@ export const loginUser = userData => dispatch => {
       })
     );
 };
+
+// Update user
+export const updateUser = (userData, userID) => dispatch => {
+  axios.post(`http://localhost:5000/api/users/settings/${userID}`, userData)
+  .then(res => {
+    console.log("user updated")
+  })
+  .catch(err =>
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    })
+  )
+}
 // Set logged in user
 export const setCurrentUser = decoded => {
   return {

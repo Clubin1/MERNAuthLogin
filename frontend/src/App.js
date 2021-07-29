@@ -19,7 +19,7 @@ import Profile from './components/dashboard/Profile'
 import Insurance from "./components/dashboard/Insurance";
 import UserLoans from './components/dashboard/UserLoans'
 import SearchLoans from './components/dashboard/SearchLoans'
-
+import Tasks from './components/dashboard/Tasks'
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -66,6 +66,9 @@ class App extends Component {
             </Switch>
             <Switch>
               <PrivateRoute exact path="/user/loans/search" component={SearchLoans} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/user/tasks" component={Tasks} />
             </Switch>
             <Footer/>
           </div>

@@ -48,6 +48,7 @@ class Navbar extends Component {
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="https://www.lendingtree.com/academy/">LendingTree Academy</a>
               <a class="dropdown-item" href="/user/loans/search">Loan Search Engine</a>
+              <a class="dropdown-item" href="/user/tasks">Your Tasks</a>
             </div>
           </li>
 
