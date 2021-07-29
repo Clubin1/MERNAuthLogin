@@ -20,7 +20,9 @@ class Profile extends React.Component {
                 <h4>View your asdasdasdasd, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}</h4>
                 <div className="userPfpCol">
                     <div className="userButton"></div>
-                    <img src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg" className="userImage">
+                    <img 
+                    alt="profileLogo"
+                    src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg" className="userImage">
                     </img>
                 </div>
               </div>

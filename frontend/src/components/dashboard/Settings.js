@@ -2,15 +2,7 @@ import React from 'react'
 
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {logoutUser} from "../../actions/authActions";
-import {Link} from "react-router-dom";
 
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Checkbox from '@material-ui/core/Checkbox';
 import {updateUser} from "../../actions/authActions";
 
 
@@ -61,7 +53,9 @@ class Settings extends React.Component {
                     }</h4>
                     <div className="userPfpCol">
                         <div className="userButton"></div>
-                        <img src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg" className="userImage"></img>
+                        <img
+                        alt="profile"
+                        src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg" className="userImage"></img>
                     </div>
                     <div className="btnRow">
                         <button style={

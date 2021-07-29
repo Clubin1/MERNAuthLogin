@@ -7,12 +7,10 @@ import {logoutUser} from "../../actions/authActions";
 import '../../assets/styles/profile.css'
 import '../../assets/styles/dashboard.css'
 
-import axios from 'axios';
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-import {Link} from "react-router-dom";
 class UserLoans extends React.Component {
     constructor() {
         super()

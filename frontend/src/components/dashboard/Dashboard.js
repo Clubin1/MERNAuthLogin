@@ -2,18 +2,15 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {logoutUser} from "../../actions/authActions";
-import axios from 'axios'
 import '../../assets/styles/form.css'
 import '../../assets/styles/dashboard.css'
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 
 import AOS from 'aos'
@@ -159,14 +156,12 @@ render() {
       creditText = <h4>Your credit score is <span className="highCredit">Very Good</span></h4>
     }
 
-    if(this.state.clicked == true){
+    if(this.state.clicked === true){
       thankYou = <h4
-      className="dashboardWrapper
-      "
       data-aos-anchor-easing='ease-in-out'
       data-aos='fade-left'
       data-aos-delay='100'
-      className="flow-text dashboardText grey-text text-darken-1">Thank you for answering our survey!</h4>
+      className="flow-text dashboardText grey-text text-darken-1 dashboardWrapper">Thank you for answering our survey!</h4>
     }
 return (
       <div 
@@ -363,6 +358,7 @@ return (
           </h4>
 
           <img
+                    alt="lendingTree Academy"
                     data-aos-anchor-easing='ease-in-out'
                     data-aos='fade-right'
                     data-aos-offset='100'

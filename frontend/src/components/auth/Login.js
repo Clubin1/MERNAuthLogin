@@ -47,7 +47,7 @@ class Login extends Component {
 
     guestUser = e => {
         e.preventDefault();
-        let email = "guestemail@gmail.com"
+        let email = "guestacc@gmail.com"
         let pass = "123123"
         const userData = {
             email: email,
